@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hill Drive Adventure</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <!-- UI Overlay -->
+        <div id="ui-layer">
+            <div id="hud" class="hidden">
+                <div class="top-row">
+                    <div class="fuel-container">
+                        <div id="fuel-bar-fill"></div>
+                    </div>
+                    <div class="stats">
+                        <div id="score-display">Score: 0</div>
+                        <div id="distance-display">0m</div>
+                        <div id="coins-display">💰 0</div>
+                    </div>
+                </div>
+
+                <div class="bottom-hud">
+                    <div class="rpm-meter">
+                        <div class="rpm-needle" id="rpm-needle"></div>
+                    </div>
+                    <div class="speed-meter" id="speed-meter">0 km/h</div>
+                </div>
+
+                <div class="controls">
+                    <button id="btn-brake" class="control-btn">BRAKE</button>
+                    <button id="btn-gas" class="control-btn">GAS</button>
+                </div>
+            </div>
+
+            <!-- Menus -->
+            <div id="main-menu" class="menu">
+                <h1>Hill Drive Adventure</h1>
+                <div class="menu-stats">
+                    <p>High Score: <span id="menu-highscore">0</span></p>
+                    <p>Coins: <span id="menu-coins">0</span></p>
+                </div>
+                <button id="btn-play" class="primary-btn">PLAY</button>
+                <button id="btn-garage" class="secondary-btn">GARAGE</button>
+            </div>
+
+            <div id="game-over-menu" class="menu hidden">
+                <h2>Game Over!</h2>
+                <p id="death-reason">Out of Fuel</p>
+                <p>Distance: <span id="go-distance">0</span>m</p>
+                <p>Coins: <span id="go-coins">0</span></p>
+                <p>Score: <span id="go-score">0</span></p>
+                <button id="btn-retry" class="primary-btn">RETRY</button>
+                <button id="btn-menu" class="secondary-btn">MAIN MENU</button>
+            </div>
+
+            <div id="garage-menu" class="menu hidden"
+                style="width: 80%; max-width: 800px; max-height: 80vh; overflow-y: auto;">
+                <h2>Garage - Select Vehicle</h2>
+                <div class="menu-stats">
+                    <p>Coins: <span id="garage-coins">0</span></p>
+                </div>
+                <div id="vehicle-list" class="vehicle-list">
+                    <!-- Dynamic vehicle cards will be inserted here -->
+                </div>
+                <button id="btn-garage-back" class="secondary-btn" style="margin-top: 20px;">BACK TO MENU</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="save.js"></script>
+    <script src="vehicles.js"></script>
+    <script src="sound.js"></script>
+    <script src="physics.js"></script>
+    <script src="camera.js"></script>
+    <script src="terrain.js"></script>
+    <script src="car.js"></script>
+    <script src="coins.js"></script>
+    <script src="fuel.js"></script>
+    <script src="powerups.js"></script>
+    <script src="ui.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
